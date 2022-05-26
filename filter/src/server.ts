@@ -33,8 +33,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
 //TODO_SOLUTION
 
-app.get( "/filteredimage", async ( req, res ) => {
-  let image_url = req.query.image_url as string;
+app.get( "/filteredimage/", async (req:express.Request, res:express.Response) => {
+  let image_url :string = req.query.image_url as string;
   console.log("URL in:");
   console.log(image_url);
   
@@ -43,6 +43,7 @@ var valid_url=new RegExp(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}
 
 if (valid_url.test(image_url)) {
   console.log("URL valid.");
+
 //Process the image
     filterImageFromURL(image_url).then((filteredpath) => {
       res.sendFile(filteredpath);
@@ -55,7 +56,7 @@ if (valid_url.test(image_url)) {
   res.status(404).send("Invalid image URL. Please try again.");
 }
 
-} );
+});
 //! END @TODO_SOLUTION
 
 
