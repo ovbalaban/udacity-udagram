@@ -50,7 +50,7 @@ if (valid_url.test(image_url)) {
         deleteLocalFiles([filteredpath]);
       });
     });
-
+//Or else 404
 } else {
   res.status(404).send("Invalid image URL. Please try again.");
 }
