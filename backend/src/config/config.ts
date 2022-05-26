@@ -6,7 +6,7 @@ export const config = {
     "host": "52.4.39.33",
     "dialect": "postgres",
     "aws_region": "us-east-1",
-    "aws_profile": "default",
+    "aws_profile": "DEPLOYED",
     "aws_media_bucket": "udagram-ovi-dev"
   },
   "jwt": {
